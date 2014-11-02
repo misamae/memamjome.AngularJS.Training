@@ -3,16 +3,28 @@
 <head>
     <title></title>
 </head>
-<body ng-controller="page4Controller">
+<body>
 
-    <h1>hello {{1+1}}nd time</h1>
+    <h1 ng-controller="firstController as controller">hello {{controller.times}}th times</h1>
+
+    <h2 ng-controller="secondController as controller">hello {{controller.times}}th times</h2>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
 
     <script type="text/javascript">
         angular.module("page4Module", [])
-               .controller("page4Controller", [function () {
-                   console.log("Hello world from console");
+               .controller("firstController", [function () {
+                   console.log("Hello world from first console");
+
+                   $ = this;
+                   $.times = 10;
+
+               }])
+               .controller("secondController", [function(){
+                   $ = this;
+                   $.times = 11;
+
+                   console.log("Hello world from second console");
                }]);
     </script>
 </body>
