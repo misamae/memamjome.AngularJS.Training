@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="NotesApp" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body ng-controller="MainController as ctrl" >
+
+    <h1>{{ctrl.helloMsg}}</h1>
+    <h2>{{ctrl.goodbyMsg}}</h2>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+
+    <script type="text/javascript">
+        angular.module("NotesApp", [])
+            .controller("MainController", [
+            function () {
+                console.log("hello from angular controller")
+                this.helloMsg = 'hello ';
+                var goodbyMsg = 'goodbye'
+            }]);
+    </script>
+</body>
+</html>
