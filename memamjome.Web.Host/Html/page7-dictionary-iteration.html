@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="page7-module">
+<head>
+    <title></title>
+</head>
+<body ng-controller="page7-controller as ctrl">
+
+    <div>
+        <div ng-repeat="(author, note) in ctrl.notes">
+            <span>{{author}}</span>
+            <span>{{note.message}}</span>
+        </div>
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+    <script type="text/javascript">
+
+        angular.module("page7-module", [])
+               .controller("page7-controller", [function () {
+
+                   var self = this;
+
+                   self.notes = {
+                       shyam: {
+                           id: 1, message: "test"
+                       },
+
+                       meisam: {
+                           id: 2, message: "test 2"
+                       },
+
+                       test: {
+                           id: 3, message: "test 3"
+                       }
+                   };
+
+                   console.log("controller loaded");
+               }]);
+    </script>
+
+</body>
+</html>
